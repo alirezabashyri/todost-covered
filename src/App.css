@@ -12,6 +12,13 @@ footer {
   height: 100%;
 }
 
+#root::before,
+#root::after {
+  clear: both;
+  content: "";
+  display: block;
+}
+
 .todo-list {
   margin: 20px 0;
 }
