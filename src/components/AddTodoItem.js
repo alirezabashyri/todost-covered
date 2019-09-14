@@ -11,7 +11,11 @@ export default function AddTodoItem(props) {
     position: "relative"
   };
 
-  function onClick() {
+  function onClick(e) {
+    if (e.key !== "Enter") {
+      return;
+    }
+
     var text = document.querySelector(".form-control").value;
 
     if (text == "") {
@@ -37,7 +41,7 @@ export default function AddTodoItem(props) {
   return (
     <div className="add-control" style={style}>
       <div className="form-group has-feedback">
-        <TodoItem />
+        <TodoItem onKeyPress={onClick} />
         <AddButton onClick={onClick} />
       </div>
     </div>

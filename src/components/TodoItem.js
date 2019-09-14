@@ -21,6 +21,7 @@ export default function TodoItem(props) {
 
   return (
     <input
+      {...props}
       style={style}
       type="text"
       onFocus={onFocus}
