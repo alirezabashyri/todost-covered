@@ -4,13 +4,13 @@ export default function TodoListItem(props) {
   function onClick(e) {
     const li = e.target.parentElement.parentElement.parentElement;
     if (li.className.includes("danger")) {
-      li.className = "checkbox animated flipInX";
+      li.className = "";
       return;
     }
-    li.className = "danger animated flipInX";
+    li.className = "danger";
   }
   return (
-    <li className="animated flipInX">
+    <li>
       <div className="checkbox">
         <span className="close">
           <i className="fa fa-times"></i>
