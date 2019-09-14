@@ -28,6 +28,9 @@ export default function AddTodoItem(props) {
       "</label></div></li>";
     document.querySelector(".todo-list").insertAdjacentHTML("beforeend", item);
 
+    var el = document.querySelector(".form-control");
+    el.value = "";
+    el.setAttribute("placeholder", "✍️ Add item...");
     setTodo(todos + { name: text });
   }
 
