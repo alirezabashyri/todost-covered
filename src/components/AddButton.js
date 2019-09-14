@@ -1,6 +1,6 @@
-import React from "react"
+import React from "react";
 
-export function AddButton() {
+export function AddButton(props) {
   const style = {
     lineHeight: "35px",
     cursor: "pointer",
@@ -26,6 +26,7 @@ export function AddButton() {
       style={style}
       onMouseOver={onMouseOver}
       onMouseOut={onMouseOut}
+      onClick={props.onClick}
       className="fa fa-plus form-control-feedback add-btn"
       title="Add item"
     ></i>

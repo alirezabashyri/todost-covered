@@ -1,10 +1,10 @@
-import React from "react"
+import React from "react";
 
 export default function TodoItem(props) {
   const style = {
     ...props.style,
     paddingRight: "25px",
-    outline: "none",
+    outline: "none"
   };
 
   var resetPadding = "";

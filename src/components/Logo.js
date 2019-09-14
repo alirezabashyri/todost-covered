@@ -1,4 +1,4 @@
-import React from "react"
+import React from "react";
 import { ReactComponent as TodoSVG } from "../assets/logos/todo.svg";
 
 export default function Logo(props) {
