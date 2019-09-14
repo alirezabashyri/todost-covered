@@ -1,6 +1,6 @@
 import React from "react";
 
-export function AddButton(props) {
+export default function AddButton(props) {
   const style = {
     lineHeight: "35px",
     cursor: "pointer",

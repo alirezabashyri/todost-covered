@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import TodoItem from "./TodoItem";
-import { AddButton } from "./AddButton";
+import AddButton from "./AddButton";
+import TodoList from "./TodoList";
+import TodoListItem from "./TodoListItem";
 
 export default function AddTodoItem(props) {
   const [todos, setTodo] = useState([]);
@@ -16,26 +18,13 @@ export default function AddTodoItem(props) {
       return;
     }
 
-    var text = document.querySelector(".form-control").value;
-
-    if (text == "") {
+    var el = document.querySelector(".form-control");
+    if (el.value === "") {
       return;
     }
 
-    var item =
-      '<li data-id="' +
-      todos.length +
-      '" class="animated flipInX ' +
-      "done" +
-      '"><div class="checkbox"><span class="close"><i class="fa fa-times"></i></span><label><span class="checkbox-mask"></span><input type="checkbox" />' +
-      text +
-      "</label></div></li>";
-    document.querySelector(".todo-list").insertAdjacentHTML("beforeend", item);
-
-    var el = document.querySelector(".form-control");
+    setTodo(todos.concat({ name: el.value }));
     el.value = "";
-    el.setAttribute("placeholder", "✍️ Add item...");
-    setTodo(todos + { name: text });
   }
 
   return (
@@ -43,6 +32,11 @@ export default function AddTodoItem(props) {
       <div className="form-group has-feedback">
         <TodoItem onKeyPress={onClick} />
         <AddButton onClick={onClick} />
+        <TodoList>
+          {todos.map(todo => (
+            <TodoListItem>{todo.name}</TodoListItem>
+          ))}
+        </TodoList>
       </div>
     </div>
   );
