@@ -24,7 +24,11 @@ function App() {
         </div>
         <footer>
           <h4>
-            Made with ❤️ by <a href="http://quentincolus.com">Alireza </a>
+            Covered with ❤️ by <a href="http://alirezabashiri.com">Alireza </a>
+            <p></p>
+            Thanks to{" "}
+            <a href="https://codepen.io/Quentincls/pen/bvBrpo">Quentin </a> for
+            both design and functionality.
           </h4>
         </footer>
       </Container>

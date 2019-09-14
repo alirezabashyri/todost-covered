@@ -85,3 +85,11 @@ footer {
 .todo-list li:hover .close {
   display: block;
 }
+
+h4 {
+	font-size: 13px;
+    color: #8c87ca;
+    text-align: center;
+    margin-top: 40px;
+    line-height: 5px;
+}
