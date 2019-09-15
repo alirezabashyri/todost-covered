@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import TodoItem from "./TodoItem";
 import AddButton from "./AddButton";
 import TodoList from "./TodoList";
+import TodoCheckbox from "./TodoCheckbox";
 
 export default function AddTodoItem(props) {
   const [todos, setTodo] = useState([]);
@@ -47,16 +48,9 @@ export default function AddTodoItem(props) {
         <TodoList>
           {todos.map((todo, i) => (
             <li key={i}>
-              <div className="checkbox">
-                <span className="close" onClick={() => onDelete(i)}>
-                  <i className="fa fa-times"></i>
-                </span>
-                <label>
-                  <span className="checkbox-mask"></span>
-                  <input onClick={onCheck} type="checkbox" />
-                  {todo.name}
-                </label>
-              </div>
+              <TodoCheckbox onDelete={() => onDelete(i)} onCheck={onCheck}>
+                {todo.name}
+              </TodoCheckbox>
             </li>
           ))}
         </TodoList>
